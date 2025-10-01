@@ -1,4 +1,4 @@
-/* Contenedor principal */
+
 .register-page-contenedor {
   min-height: 100px;
   background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
@@ -9,7 +9,6 @@
   box-sizing: border-box;
 }
 
-/* Caja del formulario - CORREGIDO */
 .form-entero {
   background: #ffffff;
   border-radius: 20px;
@@ -23,7 +22,7 @@
   position: relative;
 }
 
-/* Animación de aparición */
+
 @keyframes slideUp {
   from {
     opacity: 0;
@@ -35,13 +34,13 @@
   }
 }
 
-/* Título - CORREGIDO */
+
 .title-register {
-  font-size: 28px; /* Reducido tamaño */
+  font-size: 28px; 
   font-weight: 800;
   color: #1e293b;
   text-align: center;
-  margin-bottom: 24px; /* Reducido margen */
+  margin-bottom: 24px; 
   margin-top: 0;
   letter-spacing: -0.5px;
   display: block !important;
@@ -50,57 +49,56 @@
   line-height: 1.2;
 }
 
-/* Grupos de inputs - CORREGIDO */
 .form-entero > div:not(.password-div) {
   display: flex;
   flex-direction: column;
-  gap: 6px; /* Reducido gap */
-  margin-bottom: 2px; /* Reducido margen */
+  gap: 6px; 
+  margin-bottom: 2px; 
 }
 
 .password-div {
   display: flex;
   flex-direction: column;
-  gap: 6px; /* Reducido gap */
+  gap: 6px; 
   position: relative;
-  margin-bottom: 2px; /* Reducido margen */
+  margin-bottom: 2px; 
 }
 
 /* Labels */
 label {
-  font-size: 14px; /* Reducido ligeramente */
+  font-size: 14px; 
   font-weight: 600;
   color: #374151;
   margin-bottom: 0;
   letter-spacing: 0.2px;
 }
 
-/* Inputs - CORREGIDO */
+
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="password"] {
   width: 100%;
-  padding: 14px 16px; /* Reducido padding */
+  padding: 14px 16px; 
   border: 2px solid #e2e8f0;
-  border-radius: 10px; /* Reducido border-radius */
-  font-size: 15px; /* Reducido ligeramente */
+  border-radius: 10px; 
+  font-size: 15px; 
   color: #1e293b;
   background: #ffffff;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-sizing: border-box;
 }
 
-/* Efecto focus */
+
 input:focus {
   outline: none;
   border-color: #3b82f6;
   background: #fafbff;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12); /* Reducido shadow */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12); 
   transform: translateY(-1px);
 }
 
-/* Estados de validación */
+
 input:valid {
   border-color: #10b981;
 }
@@ -109,24 +107,24 @@ input:invalid:not(:focus):not(:placeholder-shown) {
   border-color: #ef4444;
 }
 
-/* Contenedor especial para contraseña - CORREGIDO */
+
 .password-div input {
-  padding-right: 60px; /* Reducido para más espacio */
+  padding-right: 60px; 
 }
 
-/* Botón "Mostrar/Ocultar" contraseña - CORREGIDO */
+
 .password-div button {
   position: absolute;
-  right: 12px; /* Ajustado posición */
-  top: 38px; /* Ajustado posición */
+  right: 12px; 
+  top: 38px; 
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 13px; /* Reducido */
+  font-size: 13px; 
   font-weight: 600;
   color: #3b82f6;
-  padding: 4px 6px; /* Reducido padding */
-  border-radius: 5px; /* Reducido */
+  padding: 4px 6px; 
+  border-radius: 5px; 
   transition: all 0.2s ease;
 }
 
@@ -135,36 +133,34 @@ input:invalid:not(:focus):not(:placeholder-shown) {
   background: rgba(59, 130, 246, 0.1);
 }
 
-/* Mensajes de error */
 p[style*="color: red"] {
-  font-size: 12px !important; /* Reducido */
+  font-size: 12px !important; 
   color: #ef4444 !important;
-  margin-top: 2px; /* Reducido */
+  margin-top: 2px;
   font-weight: 500;
   display: flex;
   align-items: center;
   gap: 4px;
 }
 
-/* Botón principal - CORREGIDO */
 .button-to-register {
   width: 100%;
-  padding: 16px 24px; /* Reducido padding vertical */
+  padding: 16px 24px;
   background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
   color: #ffffff;
-  font-size: 16px; /* Reducido */
+  font-size: 16px; 
   font-weight: 700;
   border: none;
-  border-radius: 10px; /* Reducido */
+  border-radius: 10px; 
   cursor: pointer;
   margin-top: 8px;
-  letter-spacing: 0.3px; /* Reducido */
+  letter-spacing: 0.3px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-to-register:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4); /* Reducido shadow */
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4); 
   background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
 }
 
@@ -173,17 +169,17 @@ p[style*="color: red"] {
   box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
 }
 
-/* Enlace "Iniciar sesión" - CORREGIDO */
+
 .iniciar-sesion {
   text-align: center;
-  font-size: 14px; /* Reducido */
+  font-size: 14px; 
   color: #64748b;
   text-decoration: none;
   font-weight: 500;
-  padding: 6px; /* Reducido */
-  border-radius: 6px; /* Reducido */
+  padding: 6px; 
+  border-radius: 6px; 
   transition: all 0.25s ease;
-  margin-top: 6px; /* Reducido */
+  margin-top: 6px; 
 }
 
 .iniciar-sesion:hover {
@@ -192,7 +188,7 @@ p[style*="color: red"] {
   text-decoration: underline;
 }
 
-/* Mejora la accesibilidad */
+
 @media (prefers-reduced-motion: reduce) {
   .form-entero,
   input,
@@ -202,7 +198,7 @@ p[style*="color: red"] {
   }
 }
 
-/* Estados adicionales para mejor UX */
+
 .button-to-register:disabled {
   background: #94a3b8;
   cursor: not-allowed;
@@ -214,65 +210,65 @@ p[style*="color: red"] {
   transform: none;
 }
 
-/* Placeholder styling */
+
 input::placeholder {
   color: #94a3b8;
   opacity: 1;
 }
 
-/* Focus visible para accesibilidad */
+
 input:focus-visible {
   outline: 2px solid #3b82f6;
   outline-offset: 2px;
 }
 
-/* Responsive design - MEJORADO */
+
 @media (max-width: 640px) {
   .register-page-contenedor {
     padding: 16px;
   }
 
   .form-entero {
-    padding: 30px 20px; /* Ajustado */
+    padding: 30px 20px; 
     max-width: calc(100vw - 32px);
     min-width: 280px;
     margin: 0;
-    gap: 18px; /* Reducido gap en móviles */
+    gap: 18px; 
   }
 
   .title-register {
-    font-size: 24px; /* Reducido */
-    margin-bottom: 20px; /* Reducido */
+    font-size: 24px; 
+    margin-bottom: 20px; 
   }
 
   input[type="text"],
   input[type="email"],
   input[type="tel"],
   input[type="password"] {
-    padding: 12px 14px; /* Reducido en móviles */
+    padding: 12px 14px; 
   }
 }
 
-/* Extra small screens - MEJORADO */
+
 @media (max-width: 480px) {
   .register-page-contenedor {
     padding: 12px;
   }
 
   .form-entero {
-    padding: 24px 16px; /* Más reducido */
+    padding: 24px 16px; 
     max-width: calc(100vw - 24px);
     min-width: 260px;
-    gap: 16px; /* Más reducido */
+    gap: 16px; 
   }
 
   .title-register {
-    font-size: 22px; /* Más reducido */
-    margin-bottom: 18px; /* Más reducido */
+    font-size: 22px; 
+    margin-bottom: 18px;
   }
 
   .password-div button {
-    top: 36px; /* Ajustado para móviles */
-    right: 10px; /* Ajustado para móviles */
+    top: 36px; 
+    right: 10px; 
   }
 }

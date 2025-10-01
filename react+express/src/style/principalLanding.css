@@ -100,10 +100,10 @@ body {
   transform: translateY(-2px);
 }
 
-/* Hero Section - COMPLETAMENTE CORREGIDO */
+
 .hero {
-  padding-top: 70%; /* espacio exacto para header fijo */
-  width: 100%;  /* en lugar de 100vw */
+  padding-top: 70%; 
+  width: 100%;  
   min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
@@ -236,16 +236,16 @@ a{
   margin: 0 auto 1.5rem;
   border-radius: 15px;
   position: relative;
-  display: flex;           /* 🔹 centra el contenido */
-  align-items: center;     /* 🔹 vertical */
-  justify-content: center; /* 🔹 horizontal */
-  overflow: hidden;        /* 🔹 evita que la imagen se salga */
+  display: flex;           
+  align-items: center;     
+  justify-content: center; 
+  overflow: hidden;       
 }
 
 .feature-icon img {
-  width: 60%;   /* 🔹 la imagen se escala dentro */
+  width: 60%;   
   height: 60%;
-  object-fit: contain; /* 🔹 mantiene proporción */
+  object-fit: contain; 
   filter: invert(100%); 
 } 
 

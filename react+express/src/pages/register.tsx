@@ -67,7 +67,7 @@ export function RegisterForm() {
       return
     }
 
-    // Aquí iría tu lógica para enviar los datos a la API
+
     const formData = {
       name,
       lastname,
@@ -78,8 +78,6 @@ export function RegisterForm() {
     try {
       const response = await register(formData)
       console.log("Registro exitoso", response)
-      // Por ejemplo, aquí podrías llamar a una función de tu servicio:
-      // registerUser(formData).then(() => navigate('/success'));
 
       alert("¡Registro exitoso! (Simulado)")
       navigate("/") // Redirigir a la página de inicio de sesión
