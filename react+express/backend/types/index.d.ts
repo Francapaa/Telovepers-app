@@ -1,7 +1,14 @@
 import { JwtPayload } from "jsonwebtoken";
 
-declare module "express-serve-static-core" {
-  interface Request {
-    user?: string | JwtPayload;
+export {}; // Esto hace que sea un módulo
+
+declare global {
+  namespace Express {
+    interface Request {
+      user?: {
+        userId: string;
+        email: string;
+      };
+    }
   }
-} // ASI EXPRESS YA SABE QUE CREAMOS UN ARCHIVO USER CON EL REQ.USER
+}
