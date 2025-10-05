@@ -79,8 +79,8 @@ export function RegisterForm() {
       const response = await register(formData)
       console.log("Registro exitoso", response)
 
-      alert("¡Registro exitoso! (Simulado)")
-      navigate("/") // Redirigir a la página de inicio de sesión
+      alert("¡Registro exitoso! ")
+      navigate("/login") // Redirigir a la página de inicio de sesión
     } catch (error: any) {
       console.error("Error en el registro: ", error.message)
     }

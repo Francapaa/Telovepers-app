@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import '../style/login.css'; 
 import { useState} from 'react';
 import{loginUser} from '../services/authService'; 
@@ -44,9 +44,8 @@ export function CreateLogIn(){
     e.preventDefault(); 
     try{ 
       const response = await loginUser({email, password}); // asi puedo definir 2 variables dentro de un objeto y pasarlo 
-      const token = response.data.token
-      localStorage.setItem('token', token); 
       console.log("Login pasado", response.data);
+      Navigate('/home'); 
     }
     catch(error: any){
       console.error("Tuvimos un error" + error.message);

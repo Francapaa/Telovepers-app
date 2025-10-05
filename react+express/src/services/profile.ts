@@ -2,16 +2,16 @@ import api from './apiConfig';
 
 
 export const getProfile = async () =>{
-  const response = await api.get('/user/profile'); 
+  const response = await api.get('/profile'); 
   return response.data;
 }
 
 export const updateProfile = async(userData: any)=>{
-  const response = await api.put('/user/profile');
+  const response = await api.put('/profile');
   return response.data; 
 }
 
 export const partialUpdateProfile = async(userData: any) =>{
-  const response  = await api.patch ('/user/profile/partial');
+  const response  = await api.patch ('/profile/partial');
   return response.data; 
 }

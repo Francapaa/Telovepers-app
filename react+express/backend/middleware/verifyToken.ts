@@ -19,7 +19,6 @@ import dotenv from 'dotenv';
 
 const authMiddleware = (req: Request, res: Response, next: NextFunction) =>{
 try{
-
   const token = req.cookies.access_token; 
   if (!token){  
     return res.status(401).json({message: 'Invalid token format'}); 
