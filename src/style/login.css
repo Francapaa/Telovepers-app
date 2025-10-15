@@ -1,0 +1,118 @@
+/* Estilos generales del body, igual que en register.css para consistencia */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.title-login{
+content: flex;
+justify-content: center;
+text-align: center;
+margin-bottom: 5%; 
+}
+
+/* Contenedor principal del formulario de login */
+form {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 50vh;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Estilos para las etiquetas */
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+/* Estilos para los inputs de texto y contraseña */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #4a5568;
+    box-sizing: border-box;
+}
+
+/* Estilo al enfocar los inputs */
+input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+/* Contenedor para el botón y el enlace */
+.button-send {
+    margin-top: 20px;
+}
+
+/* Estilo para el botón de login */
+.button-to-send {
+    width: 100%;
+    padding: 12px;
+    background-color: #3b82f6;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+}
+
+/* Efecto hover para el botón de login */
+.button-to-send:hover {
+    background-color: #2563eb;
+}
+
+/* Estilo para el enlace "Registrarse" */
+.button-send a {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: #4a5568;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.button-send a:hover {
+    color: #3b82f6;
+}
+.register-account link{
+  text-align: center;
+  font-size: 14px; /* Reducido */
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px; /* Reducido */
+  border-radius: 6px; /* Reducido */
+  transition: all 0.25s ease;
+  margin-top: 6px; /* Reducido */
+}
+
+.register-account:hover {
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.05);
+  text-decoration: underline;
+}
+
+.error-message{
+    color: red;
+}

@@ -1,0 +1,1 @@
+{"root":["./server.ts","./config/database.ts","./controllers/authcontrollers.ts","./middleware/verifytoken.ts","./models/user.ts","./routes/auth.ts","./services/authservice.ts","./types/auth.ts"],"version":"5.8.3"}
