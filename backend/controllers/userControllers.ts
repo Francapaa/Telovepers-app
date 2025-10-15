@@ -5,13 +5,12 @@ import userService from '../services/userService';
 const userControllers = {
   getProfile: async (req: Request, res: Response) =>{
     try{
-
-      if (!req.user?.userId ){
+        const userToken = req.user?.userId; 
+      if (!userToken ){
         return res.status(401).json({message: 'No authenticated'});
       }
-      
-      const userProfile = await userService.getUserProfile(req.user.userId);
-      res.status(200).json({user: userProfile});
+      const userProfile = await userService.getUserProfile(userToken);
+      res.status(200).json({success: true, user: userProfile});
     }catch(error: any){
       console.error('Error obtain profile', error);
       res.status(500).json({message: error.message || 'Error obtain profile'});

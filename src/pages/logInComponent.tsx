@@ -50,10 +50,11 @@ export function CreateLogIn(){
       const response = await loginUser({email, password}); // asi puedo definir 2 variables dentro de un objeto y pasarlo 
       console.log("Login pasado", response.data);
       const responseDataProfile = await getProfile();
-      if (){
-
+      if(!responseDataProfile.onboardingCompleted){
+          navigate('/home'); // por ahora se llama home, pero aca es donde completa los datos
+      }else{
+          navigate('/dashboard'); 
       }
-      navigate('/home');
     }
     catch(error: any){
       console.error("Tuvimos un error" + error.message);
