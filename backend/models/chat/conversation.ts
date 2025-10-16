@@ -1,7 +1,7 @@
 //En este file crearemos la coleccion para las conversaciones activas (esta solo se activa con 2 pasos:
 // 1) El usuario esta logeado (JWT)      2)Los dos usuarios hicieron match (interes mutuo))
 
-import mongoose , {Document, Types} from "mongoose";
+import mongoose , {Document, Types, Schema, Model} from "mongoose";
 
 
 export interface ConversationDocument extends Document{
@@ -12,7 +12,7 @@ export interface ConversationDocument extends Document{
     lastMessage?:{
         text: string,
         senderId: Types.ObjectId,
-        timestamp: true
+        timestamp: Date
     };
 
     unreadCount: {
@@ -30,9 +30,9 @@ const conversationSchema = new mongoose.Schema({
         required: true
     }],
     lastMessage: {
-        text: String,
+        text: {type: String},
         senderId: {type: mongoose.Schema.Types.ObjectId, ref: 'USer'},
-        timestamp: true
+        timestamp: {type: Date}
     },
     unreadCount:{
         type: Map,
@@ -48,4 +48,5 @@ const conversationSchema = new mongoose.Schema({
 conversationSchema.index({participants: 1});
 conversationSchema.index({'participants': 1, status: 1});
 
-export const Conversation = mongoose.model<ConversationDocument>('Conversation', conversationSchema);
+export const Conversation: Model<ConversationDocument> = 
+mongoose.model<ConversationDocument>("Conversation", conversationSchema); 

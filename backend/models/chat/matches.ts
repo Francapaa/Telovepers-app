@@ -10,7 +10,7 @@ export interface MatchDocuement extends Document{
 
     isMatch: boolean
     matchedAt?: Date;
-
+    
     seen: boolean; // Extremadamente importante porque sino se quedaria en un loop mostrando al mismo usuario
 
     createdAt: Date;
