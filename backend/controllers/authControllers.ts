@@ -1,10 +1,15 @@
+import User from "../models/User";
 import authService from "../services/authService";
 import { Request, Response } from "express";
 
 const authController = {
   register: async (req: Request, res: Response) =>{
     try {
+      if (!req.body) console.error("No hay nada en la request");
       const result = await authService.registerUser(req.body); 
+      res.status(201).json({message: "Registro exitoso: ", result});
+      // manejo de ux mejor => en front-end si este controller da como resultado (201)
+      // => deberia mandarlo a la pagina de login (navigate(/login))
     }
     catch(error: any){
       console.error('Hubo un error', error);

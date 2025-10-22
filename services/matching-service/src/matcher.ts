@@ -10,8 +10,7 @@ UN CO-FOUNDER CON EL QUE PODRIA LLEGAR A MATCHEAR.
 
 */
 
-import { AnyARecord } from "dns";
-import { User, UserDocument } from "./models/user";
+import { User} from "./models/user";
 import { TypeUser } from "./types";
 
 export class MatchingAlgorithm{
@@ -105,10 +104,10 @@ export class MatchingAlgorithm{
     } 
     return 0; // no concuerda nada
   }
-  private  findMatchUsers = async (userId: string, limit: number = 10)=>{
+  public findMatchUsers = async (userId: string, limit: number = 10)=>{
 
   const findUser = await User.findById(userId);  // query que busca el user que nos pasaron
-  const candidates = await User.find(this.buildPreFilter(findUser!)).limit(100);
+  const candidates = await User.find(this.buildPreFilter(findUser)).limit(100);
 
   const scoredUsers = candidates.map(userB =>(
     { 
