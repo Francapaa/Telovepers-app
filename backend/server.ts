@@ -11,9 +11,9 @@ const PORT = process.env.PORT;
 const app = express();
 app.use(
   cors({
-  origin: 'http://localhost:5173',
+  origin: 'http://localhost:5173', 
   credentials: true
-}))
+})) // PERMITIMOS EL INTERCAMBIO DE DATOS CON NUESTRO FRONT
 
 app.use(express.json()); // middleware
 app.use(cookieParser());

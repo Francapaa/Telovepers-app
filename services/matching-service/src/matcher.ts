@@ -24,7 +24,7 @@ export class MatchingAlgorithm{
   }
 
   // luego en types creamos lo que serian los user
-  calculateMatchScore(userA: any, userB: any){  
+  calculateMatchScore(userA: any, userB:any){  
     
     const scores = {
       role_Match : this.roleMatch(userA,userB),
@@ -96,38 +96,31 @@ export class MatchingAlgorithm{
 
       return 0.1; // aca no concuerda nada
   }
-  public languages(userA: any, userB:any): number{
+  public languages(userA: TypeUser, userB:TypeUser): number{
     if (!userA.languages.language && !userB.languages.language) return 0.5; 
     for (let i = 0; i<userA.languages.language.length; i++){
       for (let j = 0; j<userB.languages.language.length; j++){
-        if (userA.language.languages[i] == userB.languages.language[j]) return 1; 
+        if (userA.languages.language[i] == userB.languages.language[j]) return 1; 
       }
     } 
-    return 0; 
+    return 0; // no concuerda nada
   }
-}
-
-
-/* DUDAS A RESOLVER => QUE DEVOLVEMOS, UN OBJECT DE 10 USUARIOS ?? NO ESCALA 
--  LO MEJOR ? UN ARRAY QUE CONTENGA IDs y PUNTAJES CORRESPODIENTES
--  EL SERVICE QUE INTERACTUA CON ESTE MICROSERVICIO SE ENCARGA DE BUSCAR ESOS IDs EN LA DB
--  LOS DEVOLVEMOS ORDENADOS X PUNTAJE MAS ALTO (1 => MAS ALTO, 0.0 => MAS BAJO)
-*/ 
-const findMatchUsers = async (userId: string, limit: number = 10)=>{
+  private  findMatchUsers = async (userId: string, limit: number = 10)=>{
 
   const findUser = await User.findById(userId);  // query que busca el user que nos pasaron
-  const candidates = await User.find(buildPreFilter(findUser!)).limit(100);
+  const candidates = await User.find(this.buildPreFilter(findUser!)).limit(100);
 
-  const scoredUsers = candidates.map(userB =>({ 
+  const scoredUsers = candidates.map(userB =>(
+    { 
     id: userB._id,
-    score: this.calculateMatchScore(findUser!, userB), 
+    score: this.calculateMatchScore(findUser , userB), 
   })); 
 
   return scoredUsers.sort((a,b)=> b.score - a.score).slice(0,limit); 
 
 }
 
-function buildPreFilter(userA: any){
+private buildPreFilter(userA: any){
   return {
     _id: {$ne: userA._id},
     "profileCompleted": {$gte: 60},
@@ -136,3 +129,11 @@ function buildPreFilter(userA: any){
     "location": userA.location?.country,
   };
 }
+}
+
+
+/* DUDAS A RESOLVER => QUE DEVOLVEMOS, UN OBJECT DE 10 USUARIOS ?? NO ESCALA 
+-  LO MEJOR ? UN ARRAY QUE CONTENGA IDs y PUNTAJES CORRESPODIENTES
+-  EL SERVICE QUE INTERACTUA CON ESTE MICROSERVICIO SE ENCARGA DE BUSCAR ESOS IDs EN LA DB
+-  LOS DEVOLVEMOS ORDENADOS X PUNTAJE MAS ALTO (1 => MAS ALTO, 0.0 => MAS BAJO)
+*/ 
